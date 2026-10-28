@@ -48,7 +48,7 @@ jobs:
                   raise SystemExit("Could not locate the TanStack Start server config in vite.config.ts")
               source = source.replace(
                   marker,
-                  marker + '\n    // Produce a static app shell for GitHub Pages.\n    spa: { enabled: true, prerender: { outputPath: "/index.html" } },',
+                  marker + '\n    // Produce index.html as the GitHub Pages app shell.\n    spa: { enabled: true, prerender: { outputPath: "/index" } },',
                   1,
               )
               config.write_text(source, encoding="utf-8")
